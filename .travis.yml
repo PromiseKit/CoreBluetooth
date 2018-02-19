@@ -6,9 +6,9 @@ env:
 cache:
   directories:
   - Carthage
+before_install:
+  - carthage bootstrap --cache-builds --no-use-binaries --platform $PLATFORM --verbose
 install:
-  - carthage bootstrap --cache-builds --no-use-binaries --platform $PLATFORM
+  - xcodebuild -scheme PMKCoreBluetooth -destination "$DESTINATION" build-for-testing
 script:
-  - set -o pipefail
-  - xcodebuild -scheme PMKCoreBluetooth -destination "$DESTINATION" clean build
   - xcodebuild -scheme PMKCoreBluetooth -destination "$DESTINATION" test
