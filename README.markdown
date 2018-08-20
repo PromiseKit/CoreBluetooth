@@ -1,3 +1,7 @@
+# DEPRECATED
+
+THe promises provided here are not-sensible. You should use a full delegate pattern for CoreBluetooth, one shot listening for connectivity is not wise since the accessory may disconnect at any time.
+
 # PromiseKit CoreBluetooth Extensions ![Build Status]
 
 This project adds promises to Apple’s CoreBluetooth framework.
